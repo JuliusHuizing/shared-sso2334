@@ -1,0 +1,37 @@
+---
+title: "Assignment 1"
+author: "James Bond (st.number 007)"
+date: "1 January 2033"
+output: pdf_document
+fontsize: 11pt
+highlight: tango
+---
+
+```{r}
+data_path = "./data/"
+birth_data = read.table(paste(data_path, "birthweight.txt", sep=""), header = TRUE)
+austen_data = read.table(paste(data_path, "austen.txt", sep=""), header = TRUE)
+weather_data = read.table(paste(data_path, "weather.txt", sep=""), header = TRUE)
+
+```
+
+### Exercise 1.1
+
+(a) 
+
+-   The data seems to be normally distributed as a qqplot shows a roughly straight line (see figure below)
+-   using the mean() function yields a points estimate of **2913.293** for the mean weight (in grams).
+
+```{r}
+# summary(birth_data)
+# check the normality of the data through a qqplot.
+qqplot = qqnorm(birth_data$birthweight)
+mean_point_estimate = mean(birth_data$birthweight)
+```
+
+
+(b) How do we do this?
+
+```{r}
+mean_point_estimate # yields 2913.293
+```
