@@ -29,10 +29,14 @@ qqplot = qqnorm(birth_data$birthweight)
 mean_point_estimate = mean(birth_data$birthweight)
 ```
 
-(b) How do we do this?
+(b) We get a confidence interval of 2913.293 plm 1147.286 at a confidence level of 90%.
 
 ```{r}
-qnorm(0.95, mean_point_estimate, sd(birth_data$birthweight)) # like this? # What does this mean visually on the distribution?
+standard_error_estimate = sd(birth_data$birthweight) / sqrt(length(birth_data))
+ninty_five_quantille = qnorm(0.95, mean_point_estimate, standard_error_estimate) # 95, because we want to keep 10% in total when whe sum the left-overs on both sides of the distribution.
+upper_range = ninty_five_quantille - mean_point_estimate
+upper_range
+
 
 ```
 
