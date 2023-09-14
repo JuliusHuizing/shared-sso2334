@@ -35,3 +35,17 @@ mean_point_estimate = mean(birth_data$birthweight)
 ```{r}
 mean_point_estimate # yields 2913.293
 ```
+
+(c)
+Assuming a theoretical mean of 2800 (the null hypothesis) and an alternative hypothesis stating that m > 2800,
+one sample, one-tailed t-test yields a p-value of < 2.2e-16.
+This means that under the null-hypothesis, it is very unlikely that we would observe the sample data.
+Assuming a standard confidence interval of 95%, we would reject the null-hypothesis based on this t-test and agree with the expert that the mean birthweight is likely higher than 2800 grams.
+```{r}
+# H0: m = 2800
+# Ha: m > 2800
+# This thus implies a one-tailed t-test.
+t.test(birth_data$birthweight, alternative="greater", mu: 2800)
+```
+
+
